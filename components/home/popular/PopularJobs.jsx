@@ -7,7 +7,7 @@ import { COLORS, SIZES } from '@/constants';
 import PopularJobCard from '../../common/cards/popular/PopularJobCard';
 import useFetch from '../../../hook/useFetch';
 
-const Popularjobs = () => {
+const PopularJobs = () => {
   const router = useRouter();
   const { data, isLoading, error } = useFetch('search', {
     query: 'Bee Keeper',
@@ -54,4 +54,4 @@ const Popularjobs = () => {
   )
 }
 
-export default Popularjobs
+export default PopularJobs;
