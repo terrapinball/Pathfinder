@@ -10,7 +10,7 @@ import useFetch from '../../../hook/useFetch';
 const PopularJobs = () => {
   const router = useRouter();
   const { data, isLoading, error } = useFetch('search', {
-    query: 'Bee Keeper',
+    query: 'Ping Pong',
     num_pages: 1
   })
 
