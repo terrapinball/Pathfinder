@@ -9,7 +9,7 @@ import useFetch from '../../../hook/useFetch';
 const NearbyJobs = () => {
 	const router = useRouter();
 	const { data, isLoading, error } = useFetch('search', {
-		query: 'Ping Pong',
+		query: 'Forester',
 		num_pages: 1
 	});
 
