@@ -3,9 +3,12 @@ import { View, ScrollView, SafeAreaView } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 
 import { COLORS, icons, images, SIZES } from '@/constants';
-import { Nearbyjobs, PopularJobs, ScreenHeaderBtn, Welcome } from '@/components';
+import { NearbyJobs, PopularJobs, ScreenHeaderBtn, Welcome } from '@/components';
 
 const Home = () => {
+
+  const router = useRouter();
+  const [searchTerm, setSearchTerm] = useState('');
 
   const handleMenuPress = () => {
 
@@ -40,10 +43,16 @@ const Home = () => {
           }}
         >
           <Welcome
-
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            handleClick={() => {
+              if(searchTerm) {
+                router.push(`/search/${searchTerm}`)
+              }
+            }}
           />
-          <PopularJobs/>
-          <Nearbyjobs/>
+          <PopularJobs />
+          <NearbyJobs />
         </View>
       </ScrollView>
     </SafeAreaView>
